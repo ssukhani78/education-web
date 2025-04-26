@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dipti Tuition Classes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    .active-link {
+      color: #1e3a8a; /* Dark Blue */
+      font-weight: 700;
+      border-bottom: 2px solid #1e3a8a;
+      padding-bottom: 2px;
+      transition: all 0.3s ease;
+    }
+
+    /* Logo Animation */
+    .logo {
+      transition: transform 0.5s ease, filter 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: rotate(10deg) scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    /* Navbar Link Hover Animation */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #2563eb; /* Lighter Blue when hovered */
+      transform: translateY(-2px); /* Slightly raised effect */
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #2563eb;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%; /* Underline expands on hover */
+    }
+
+    /* Continuous Animation for Navbar Name */
+    @keyframes wave {
+      0% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(-5px);
+      }
+      50% {
+        transform: translateY(0);
+      }
+      75% {
+        transform: translateY(5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-name {
+      animation: wave 2s infinite ease-in-out;
+      color: #1e40af; /* Dark Blue */
+      transition: color 0.5s ease;
+    }
+
+    .navbar-name:hover {
+      color: #2563eb; /* Lighter Blue when hovered */
+    }
+  </style>
+</head>
+<body class="bg-blue-50 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0 flex items-center space-x-2">
+          <img class="h-8 w-8 logo" src="https://img.icons8.com/ios-filled/50/1e40af/books.png" alt="Logo">
+          <span class="font-bold text-blue-700 text-xl navbar-name">Dipti Classes</span>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link text-blue-700 hover:text-blue-900 font-medium">Home</a>
+          <a href="#courses" class="nav-link text-blue-700 hover:text-blue-900 font-medium">Courses</a>
+          <a href="#about" class="nav-link text-blue-700 hover:text-blue-900 font-medium">About</a>
+          <a href="#contact" class="nav-link text-blue-700 hover:text-blue-900 font-medium">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer (Because navbar is fixed) -->
+  <div class="h-16"></div>
+
+  <!-- Hero Section -->
+  <section id="home" class="flex flex-col items-center text-center p-10 mt-8">
+    <h1 class="text-5xl font-bold text-blue-800 mb-4">Learn Today, Lead Tomorrow</h1>
+    <p class="text-lg text-gray-700 max-w-2xl">
+      Personalized home tuition for all boards and commerce streams. Shaping bright futures with dedication and care.
+    </p>
+    <a href="#contact" class="mt-6 bg-blue-700 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition">Enroll Now</a>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="bg-white py-16">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-blue-800 mb-10">Our Courses</h2>
+      <div class="grid md:grid-cols-3 gap-8 px-8">
+        <div class="bg-blue-100 p-8 rounded-2xl shadow-md hover:shadow-xl transition hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-700">1st – 10th Standard</h3>
+          <p class="text-gray-600">Gujarat, CBSE & ICSE Boards</p>
+        </div>
+        <div class="bg-blue-100 p-8 rounded-2xl shadow-md hover:shadow-xl transition hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-700">11th – 12th Commerce</h3>
+          <p class="text-gray-600">Gujarat, CBSE & ICSE Boards</p>
+        </div>
+        <div class="bg-blue-100 p-8 rounded-2xl shadow-md hover:shadow-xl transition hover:scale-105">
+          <h3 class="text-2xl font-semibold mb-2 text-blue-700">B.Com (F.Y., S.Y., T.Y.)</h3>
+          <p class="text-gray-600">Specialized commerce coaching for graduates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-blue-50">
+    <div class="max-w-5xl mx-auto text-center px-6">
+      <h2 class="text-4xl font-bold text-blue-800 mb-8">About Dipti Classes</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Founded by <strong>Dipti Jeswani</strong> (M.Com., B.Ed.), Dipti Tuition Classes has been delivering quality education
+        for school and commerce students. With a focus on building strong fundamentals, personalized attention, and simplified
+        learning methods, we ensure every student excels academically and grows confidently.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-8 md:mb-0">
+        <h2 class="text-4xl font-bold text-blue-800 mb-6">Get in Touch</h2>
+        <p class="text-gray-700 mb-4">Visit us at:</p>
+        <p class="text-gray-700">Block-B 903, Kailash Rejoice-2, New Shahibag</p>
+        <p class="text-gray-700 mt-2">Teacher: Dipti Jeswani (M.Com., B.Ed)</p>
+        <p class="text-gray-700 mt-2">Phone: <a href="tel:9377522778" class="text-blue-700 hover:text-blue-900">9377522778</a></p>
+      </div>
+      <div class="text-center">
+        <a href="tel:9377522778" class="bg-blue-700 text-white px-8 py-4 rounded-full text-lg hover:bg-blue-800 transition">
+          Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-100 py-4 text-center text-gray-600 text-sm">
+    © 2025 Dipti Tuition Classes. All rights reserved.
+  </footer>
+
+  <!-- ScrollSpy Script -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active-link");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active-link");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
